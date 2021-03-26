@@ -75,7 +75,25 @@ class Six extends StatelessWidget {
                   ),
                 ),
                 TextButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      return showDialog<void>(
+                        context: context,
+                        barrierDismissible: false, // user must tap button!
+                        builder: (BuildContext context) {
+                          return AlertDialog(
+                            title: Text('Thanks a lot!'),
+                            content: SingleChildScrollView(
+                              child: ListBody(
+                                children: <Widget>[
+                                  Text('Contact me: 9518523179'),
+                                  Text('Just send a Email: hemnanisahil777@gmail.com'),
+                                ],
+                              ),
+                            ),
+                          );
+                        },
+                      );
+                    },
                     child: Text(
                       "Become the website's Sponsor",
                       style: TextStyle(

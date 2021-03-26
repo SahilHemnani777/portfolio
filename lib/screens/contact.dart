@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -5,8 +7,20 @@ import 'package:portfolio/screens/projects.dart';
 import 'package:portfolio/screens/resume.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:mailto/mailto.dart';
-
 import 'main.dart';
+
+
+launchMailto(String email, String msg, String name, String org) async {
+  final mailtoLink = Mailto(
+    to: ['hemnanisahil777@gmail.com'],
+    subject: "portfolio-msg",
+    body: 'Name: $name\nOrganisation: $org\nEmail: $email\nMessage: $msg',
+  );
+  // Convert the Mailto instance into a string.
+  // Use either Dart's string interpolation
+  // or the toString() method.
+  await launch('$mailtoLink');
+}
 
 const _urlGITHUB = 'https://github.com/SahilHemnani777';
 
@@ -368,19 +382,7 @@ class _ContactState extends State<Contact> {
                                 borderRadius: BorderRadius.all(Radius.circular(10))),
                             child: TextButton(
                                 onPressed: () {
-                                  return showDialog(
-                                    context: context,
-                                    builder: (context) {
-                                      return AlertDialog(
-                                        // Retrieve the text the user has entered by using the
-                                        // TextEditingController.
-                                        content: Text("Name: "+ myNameController.text +
-                                        "\nOrganization: "+ myCompanyController.text +
-                                        "\nEmail: "+ myEmailController.text +
-                                        "\nMessage: "+ myMessageController.text),
-                                      );
-                                    },
-                                  );
+                                  launchMailto(myEmailController.text, myMessageController.text, myNameController.text, myCompanyController.text);
                                 }, child: Text("Send", style: TextStyle(fontSize: 20.0, color: Colors.white),))))
                   ],
                 )),
