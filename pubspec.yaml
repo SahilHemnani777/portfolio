@@ -32,13 +32,12 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  url_launcher: ^6.0.2-nullsafety
+  url_launcher: ^6.0.2
   google_fonts: ^2.0.0
   pdf: ^3.1.0
   mailto: ^1.1.0
   firebase_core: ^1.0.2
   firebase_database: ^6.1.0
-
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
