@@ -122,9 +122,9 @@ class Projects extends StatelessWidget {
         ),
         backgroundColor: Colors.transparent,
         body: ListView.builder(
-          itemCount: project_list.length,
+          itemCount: project_list.length+1,
           itemBuilder: (BuildContext context, int index) {
-            if(index==project_list.length-1){
+            if(index==project_list.length){
               return Six();
             }else{
             return project_list.elementAt(index);}
