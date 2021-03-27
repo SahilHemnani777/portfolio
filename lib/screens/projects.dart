@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/containers/6.dart';
 import 'package:portfolio/screens/resume.dart';
 
 import '../projects_info.dart';
@@ -123,7 +124,10 @@ class Projects extends StatelessWidget {
         body: ListView.builder(
           itemCount: project_list.length,
           itemBuilder: (BuildContext context, int index) {
-            return project_list.elementAt(index);
+            if(index==project_list.length-1){
+              return Six();
+            }else{
+            return project_list.elementAt(index);}
           },
         ),
       ),
