@@ -1,10 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/screens/resume.dart';
 
+import '../projects_info.dart';
 import 'contact.dart';
 import 'main.dart';
 
+// ignore: must_be_immutable
 class Projects extends StatelessWidget {
+  // ignore: non_constant_identifier_names
+  List<Widget> project_list = [
+    chatting,
+    brainalgo,
+    sudoku,
+    night,
+    bakda,
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Stack(children: [
@@ -55,7 +66,7 @@ class Projects extends StatelessWidget {
                       MaterialPageRoute(
                         builder: (BuildContext context) => Resume(),
                       ),
-                          (route) => false,
+                      (route) => false,
                     );
                   },
                 ),
@@ -78,7 +89,7 @@ class Projects extends StatelessWidget {
                       MaterialPageRoute(
                         builder: (BuildContext context) => Contact(),
                       ),
-                          (route) => false,
+                      (route) => false,
                     );
                   },
                 ),
@@ -92,7 +103,7 @@ class Projects extends StatelessWidget {
                 MaterialPageRoute(
                   builder: (BuildContext context) => HomeScreen(),
                 ),
-                    (route) => false,
+                (route) => false,
               );
             },
             child: RichText(
@@ -109,6 +120,12 @@ class Projects extends StatelessWidget {
           ),
         ),
         backgroundColor: Colors.transparent,
+        body: ListView.builder(
+          itemCount: project_list.length,
+          itemBuilder: (BuildContext context, int index) {
+            return project_list.elementAt(index);
+          },
+        ),
       ),
     ]);
   }
