@@ -4,7 +4,7 @@ import 'package:portfolio/screens/resume.dart';
 
 import '../projects_info.dart';
 import 'contact.dart';
-import 'main.dart';
+import '../main.dart';
 
 // ignore: must_be_immutable
 class Projects extends StatelessWidget {

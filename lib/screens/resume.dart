@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:portfolio/screens/projects.dart';
 
 import 'contact.dart';
-import 'main.dart';
+import '../main.dart';
 
 class Resume extends StatelessWidget {
   @override

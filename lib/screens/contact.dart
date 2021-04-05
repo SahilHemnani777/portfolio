@@ -7,7 +7,7 @@ import 'package:portfolio/screens/projects.dart';
 import 'package:portfolio/screens/resume.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:mailto/mailto.dart';
-import 'main.dart';
+import '../main.dart';
 
 
 launchMailto(String email, String msg, String name, String org) async {
