@@ -123,14 +123,14 @@ const RESOURCES = {
 "assets/assets/images/twitter.png": "e08259cf9701439815b59c534cebc18d",
 "assets/FontManifest.json": "dc3d03800ccca4601324923c0b1d6d57",
 "assets/fonts/MaterialIcons-Regular.otf": "1288c9e28052e028aba623321f7826ac",
-"assets/NOTICES": "735332fd9c913adf674aea5c5b9c8070",
+"assets/NOTICES": "b41897c0bb1a4afa612cd542497de438",
 "assets/packages/cupertino_icons/assets/CupertinoIcons.ttf": "6d342eb68f170c97609e9da345464e5e",
 "favicon.png": "5dcef449791fa27946b3d35ad8803796",
 "icons/Icon-192.png": "ac9a721a12bbc803b44f645561ecb1e1",
 "icons/Icon-512.png": "96e752610906ba2a93c65f8abe1645f1",
-"index.html": "8064d63cdf8816f7eb8d33be672a3561",
-"/": "8064d63cdf8816f7eb8d33be672a3561",
-"main.dart.js": "bf3b953c5f1714bf9462554e1c079038",
+"index.html": "da79a5b929f8369ebc8e9cfe93bbe168",
+"/": "da79a5b929f8369ebc8e9cfe93bbe168",
+"main.dart.js": "6361f964aa5c79f91b45ea4fb43683d7",
 "manifest.json": "31c82aebb21c2376939297e72e92d77f",
 "version.json": "426313f2f3133c2f20415344c4a22df3"
 };
@@ -150,7 +150,7 @@ self.addEventListener("install", (event) => {
   return event.waitUntil(
     caches.open(TEMP).then((cache) => {
       return cache.addAll(
-        CORE.map((value) => new Request(value, {'cache': 'reload'})));
+        CORE.map((value) => new Request(value + '?revision=' + RESOURCES[value], {'cache': 'reload'})));
     })
   );
 });
